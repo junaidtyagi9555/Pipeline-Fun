@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>DevOps Pipeline Game</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="game-container">
+        <div class="game-header">
+            <div class="header-title">
+                <span class="trophy">🏆</span>
+                <h1>DevOps Pipeline Game</h1>
+                <span class="trophy">🏆</span>
+            </div>
+            <p>Interactive pipeline game! Test your DevOps skills in a fun, gamified environment.</p>
+        </div>
+
+        <div class="score-board">
+            <div class="score-item">
+                <div class="score-value" id="totalXP">0</div>
+                <div class="score-label">CHAMPION XP</div>
+            </div>
+            <div class="score-item">
+                <div class="score-value" id="gamesWon">0</div>
+                <div class="score-label">VICTORIES</div>
+            </div>
+            <div class="score-item">
+                <div class="score-value" id="winStreak">0</div>
+                <div class="score-label">WIN STREAK</div>
+            </div>
+        </div>
+
+        <div class="game-grid" id="gameGrid">
+            <div class="game-card" data-game="racer">
+                <div class="card-icon">🚀</div>
+                <h3>CI/CD</h3>
+                <div class="subtitle">CHALLENGES</div>
+                <div class="description">Fly through the deployment pipeline — dodge obstacles to push your build!</div>
+                <button class="game-btn">PLAY</button>
+            </div>
+            <div class="game-card" data-game="memory">
+                <div class="card-icon">🧠</div>
+                <h3>MEMORY</h3>
+                <div class="subtitle">MASTER</div>
+                <div class="description">Match CI/CD pipeline stages before time runs out!</div>
+                <button class="game-btn">PLAY</button>
+            </div>
+            <div class="game-card" data-game="k8s">
+                <div class="card-icon">⚛️</div>
+                <h3>K8s</h3>
+                <div class="subtitle">RESCUE</div>
+                <div class="description">Your cluster is failing — heal nodes and restore average health to 85%!</div>
+                <button class="game-btn">PLAY</button>
+            </div>
+            <div class="game-card" data-game="docker">
+                <div class="card-icon">🐳</div>
+                <h3>DOCKER</h3>
+                <div class="subtitle">NEBULA</div>
+                <div class="description">Merge RUN layers to optimize your Dockerfile and reduce image size!</div>
+                <button class="game-btn">PLAY</button>
+            </div>
+            <div class="game-card" data-game="aws">
+                <div class="card-icon">☁️</div>
+                <h3>CLOUD</h3>
+                <div class="subtitle">MASTER</div>
+                <div class="description">Balance AWS Auto Scaling across all regions before actions run out!</div>
+                <button class="game-btn">PLAY</button>
+            </div>
+        </div>
+
+        <div class="game-footer">
+            <p>🚀 Build. Ship. Scale. Repeat.</p>
+        </div>
+    </div>
+
+    <!-- Game Modal -->
+    <div class="game-modal" id="gameModal">
+        <div class="modal-content" id="modalContent">
+            <button class="close-modal" id="closeModalBtn">×</button>
+            <div id="gameArea"></div>
+        </div>
+    </div>
+
+    <div class="toast" id="toast"></div>
+    <div class="loader" id="loader"></div>
+
+    <script src="game.js"></script>
+</body>
+</html>
