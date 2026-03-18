@@ -1,0 +1,18 @@
+# build the image
+sudo docker build -t game .
+
+# Run with port mapping
+sudo docker run -d -p 80:80 --name web-page game
+
+# Check logs
+sudo docker logs web-page
+
+# Test
+curl localhost:80
+
+# Stop and remove existing container
+sudo docker stop web-page
+sudo docker rm web-page
+
+
+Note:if you check port no so also add into Security Group

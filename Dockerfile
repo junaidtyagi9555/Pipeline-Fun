@@ -1,14 +1,11 @@
 FROM nginx:alpine
 
-RUN rm -rf /usr/share/ngnix/html/*
+# Copy files directly without removing first (let's see what happens)
+COPY . /usr/share/nginx/html/
 
-COPY . /usr/share/nginx/html
-
-
-COPY nginx.conf /etc/nginx/nginx.conf
-
+# Just use default nginx config for now
+# Don't copy custom config
 
 EXPOSE 80
-
 
 CMD ["nginx", "-g", "daemon off;"]
